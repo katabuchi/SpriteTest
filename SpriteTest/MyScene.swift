@@ -11,7 +11,6 @@ import Foundation
 import SpriteKit
 
 class MyScene : SKScene{
-  
   var labelNode:SKLabelNode
   override init(size: CGSize) {
     self.labelNode = SKLabelNode(text: "SampleNode")
@@ -24,20 +23,16 @@ class MyScene : SKScene{
     self.addChild(self.labelNode)
     self.backgroundColor = SKColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
     
-    
-    var nodes:SKLabelNode = SKLabelNode(text: "Sample2")
+    var nodes:SKLabelNode = SKLabelNode(text: "")
     nodes.position = CGPointMake(0, 10)
     nodes.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 10))
     self.addChild(nodes)
-    
     
     var ground:SKSpriteNode = SKSpriteNode()
     ground.position = CGPointMake(CGRectGetMidX(self.frame), 0)
     ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 10))
     ground.physicsBody?.dynamic = false
     self.addChild(ground)
-    
-    
   }
   
   required init(coder aDecoder: NSCoder) {
