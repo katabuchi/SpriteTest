@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import SpriteKit
 
 class ViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = UIColor.whiteColor()
+    var spriteView:SKView = SKView(frame: self.view.frame)
+    var scene:MyScene = MyScene(size: CGSizeMake(self.view.frame.width, self.view.frame.height))
+    spriteView.presentScene(scene)
+    self.view = spriteView
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
+  
+  
 }
 
